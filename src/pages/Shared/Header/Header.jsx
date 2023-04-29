@@ -1,47 +1,47 @@
-import React from "react";
-import logo from "../../../assets/logo.png";
+import React from 'react';
 import moment from "moment";
-import { Container, Button, Nav, Navbar } from "react-bootstrap";
-import Marquee from "react-fast-marquee";
+import logo from '../../../assets/logo.png';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import Marquee from 'react-fast-marquee';
+import { Link } from 'react-router-dom';
 
 
 const Header = () => {
-  return (
-    <div className="container text-center py-5">
-      <img src={logo} alt="" />
-      <h4>Journalism Without Fear or Favour</h4>
-      <h4>{moment().format("dddd, MMMM Do, YYYY")}</h4>
-      <div className="d-flex bg-warning p-2">
-        <Button className="rounded-0" variant="danger">
-          Latest
-        </Button>
-
-        <Marquee direction="left" pauseOnHover="true" speed="100">
-          I can be a React component, multiple React components, or just some
-          text.
-        </Marquee>
-      </div>
-      <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
-        <Container>
-          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="#features">Home</Nav.Link>
-              <Nav.Link href="#pricing">About</Nav.Link>
-              <Nav.Link href="#pricing">Career</Nav.Link>
-            </Nav>
-            <Nav>
-              <Nav.Link to="">Profile</Nav.Link>
-              <Nav.Link eventKey={2} to="">
-                <Button variant="danger">Login</Button>
-              </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </div>
-  );
+    return (
+      <Container>
+        <div className="text-center">
+          <img src={logo} alt="" />
+          <p>Journalism Without Fear or Favour</p>
+          <small>{moment().format("dddd, MMMM, Do YYYY")}</small>
+        </div>
+        <div className="d-flex">
+          <Button variant="danger">Latest</Button>
+          <Marquee speed={100} pauseOnClick>
+            I can be a React component, multiple React components, or just some
+            text.
+          </Marquee>
+        </div>
+        <div>
+          <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+            <Container>
+              <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+              <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav className="mx-auto">
+                  <Nav.Link href="#features">Home</Nav.Link>
+                  <Nav.Link href="#pricing">About</Nav.Link>
+                  <Nav.Link href="#pricing">Career</Nav.Link>
+                </Nav>
+                <Nav>
+                  <Nav.Link href="#deets">Profile</Nav.Link>
+                  <Link><Button variant='dark'>Login</Button></Link>
+                </Nav>
+              </Navbar.Collapse>
+            </Container>
+          </Navbar>
+        </div>
+      </Container>
+    );
 };
 
 export default Header;

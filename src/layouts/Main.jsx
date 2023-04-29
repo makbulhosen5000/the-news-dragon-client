@@ -1,10 +1,9 @@
 import React from 'react';
-import Header from '../pages/Shared/Header/Header';
-import Footer from '../pages/Shared/Footer/Footer';
-import { Col, Container, Row } from 'react-bootstrap';
-import LeftNav from '../pages/Shared/LeftNav/LeftNav';
-import RightNav from '../pages/Shared/RightNav/RightNav';
-
+import Header from '../pages/shared/Header/Header';
+import Footer from '../pages/shared/Footer/Footer';
+import { Container, Row, Col } from 'react-bootstrap';
+import LeftNav from '../pages/shared/LeftNav/LeftNav';
+import RightNav from '../pages/shared/RightNav/RightNav';
 
 const Main = () => {
     return (
@@ -12,13 +11,13 @@ const Main = () => {
         <Header />
         <Container>
           <Row>
-            <Col sm={4} lg={3} >
+            <Col lg={3}>
                 <LeftNav/>
             </Col>
-            <Col sm={4} lg={6} >
-                <h1>main content coming ...</h1>
+            <Col lg={6}>
+                <h1>Coming Soon</h1>
             </Col>
-            <Col sm={4} lg={3} >
+            <Col lg={3}>
                 <RightNav/>
             </Col>
           </Row>
