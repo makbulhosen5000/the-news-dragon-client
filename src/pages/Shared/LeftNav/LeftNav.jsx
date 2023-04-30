@@ -14,11 +14,16 @@ const LeftNav = () => {
     },[])
 
     return (
-      <div className='ps-4'>
+      <div className="ps-4">
         <h4>All Categories</h4>
         {categories.map((category) => (
-          <p>
-            <Link to={`/category/${category.id}`} className='text-decoration-none text-dark'>{category.name}</Link>
+          <p key={category.id}>
+            <Link
+              to={`/category/${category.id}`}
+              className="text-decoration-none text-dark"
+            >
+              {category.name}
+            </Link>
           </p>
         ))}
       </div>
